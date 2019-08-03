@@ -1,0 +1,20 @@
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+    <div fxFlex="33%">
+        <mat-card class="alert-success"><span><i class="material-icons">
+                    sentiment_very_satisfied
+                </i></span> <span> Went Well </span>
+        </mat-card>
+        <app-sprint-item></app-sprint-item>
+    </div>
+    <div fxFlex="33%">
+        <mat-card class="alert-danger"><i class="material-icons">
+                sentiment_very_dissatisfied
+            </i> Didn't go well </mat-card>
+    </div>
+    <div fxFlex>
+        <mat-card class="alert-primary">
+            <i class="material-icons">
+                edit
+            </i> Action Items</mat-card>
+    </div>
+</div>

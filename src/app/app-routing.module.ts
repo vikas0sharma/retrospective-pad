@@ -7,6 +7,11 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./dashboard/dashboard.module')
             .then(mod => mod.DashboardModule)
+    },
+    {
+        path: 'board',
+        loadChildren: () => import('./sprint-board/sprint-board.module')
+            .then(mod => mod.SprintBoardModule)
     }
 ];
 

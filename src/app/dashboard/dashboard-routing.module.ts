@@ -7,11 +7,11 @@ const routes: Routes = [
     {
         path: '',
         component: SprintListComponent
-      }
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class DashboardRoutingModule { }
