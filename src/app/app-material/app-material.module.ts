@@ -1,18 +1,42 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
+
+import { MatCardModule, 
+    MatIconModule, 
+    MatToolbarModule, 
+    MatButtonModule, 
+    MatFormFieldModule, 
+    MatInputModule,
+    MatListModule,
+    MatDividerModule } from '@angular/material';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
-    MatToolbarModule
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatDividerModule
   ],
   exports: [
-    BrowserAnimationsModule,
-    MatToolbarModule
+    CommonModule,
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatDividerModule
   ]
 })
 export class AppMaterialModule { }
