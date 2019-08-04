@@ -29,7 +29,7 @@
         <i class="material-icons">add</i>
     </button>
     <div *ngIf="isShown">
-        <button mat-mini-fab class="fab-secondary alert-success" color="secondary">
+        <button (click)="addThingsWentWell()" mat-mini-fab class="fab-secondary alert-success" color="secondary">
             <i class="material-icons alert">sentiment_very_satisfied</i>
         </button>
         <button mat-mini-fab class="fab-secondary alert-danger" color="secondary">
