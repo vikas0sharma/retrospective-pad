@@ -1,21 +1,23 @@
 <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
     <div fxFlex="33%">
-        <mat-card class="alert-success"><span><i class="material-icons">
-                    sentiment_very_satisfied
-                </i></span> <span> Went Well </span>
+        <mat-card class="alert-success">
+            <i class="material-icons">
+                sentiment_very_satisfied
+            </i> Went Well
         </mat-card>
         <app-sprint-item></app-sprint-item>
     </div>
     <div fxFlex="33%">
-        <mat-card class="alert-danger"><i class="material-icons">
+        <mat-card class="alert-danger">
+            <i class="material-icons">
                 sentiment_very_dissatisfied
-            </i> Didn't go well 
+            </i> Didn't go well
         </mat-card>
     </div>
     <div fxFlex>
         <mat-card class="alert-primary">
             <i class="material-icons">
-                edit
+                list
             </i> Action Items
         </mat-card>
         <app-sprint-item></app-sprint-item>
@@ -23,7 +25,18 @@
 </div>
 
 <div class="fab-container">
-    <button mat-fab class="fab-toggler">
+    <button [ngClass]="isShown ? 'down':''" mat-fab class="fab-toggler rotate" (click)="isShown = !isShown">
         <i class="material-icons">add</i>
     </button>
+    <div *ngIf="isShown">
+        <button mat-mini-fab class="fab-secondary alert-success" color="secondary">
+            <i class="material-icons alert">sentiment_very_satisfied</i>
+        </button>
+        <button mat-mini-fab class="fab-secondary alert-danger" color="secondary">
+            <i class="material-icons">sentiment_very_dissatisfied</i>
+        </button>
+        <button mat-mini-fab class="fab-secondary alert-primary" color="secondary">
+            <i class="material-icons">list</i>
+        </button>
+    </div>
 </div>
