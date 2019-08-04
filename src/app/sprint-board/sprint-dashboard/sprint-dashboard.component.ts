@@ -3,6 +3,7 @@ import { SprintItem } from 'src/app/models/sprint-item';
 import { SprintBoardService } from 'src/app/services/sprint-board/sprint-board.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SprintModal } from '../sprint-modal/sprint-modal.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-sprint-dashboard',
@@ -15,7 +16,8 @@ export class SprintDashboardComponent implements OnInit {
     goodThings: SprintItem[] = [];
 
     constructor(private sprintBoardService: SprintBoardService,
-        private dialog: MatDialog) { }
+        private dialog: MatDialog,
+        private snackBar: MatSnackBar) { }
 
     ngOnInit() {
         this.goodThings = this.sprintBoardService.sprintItems;
@@ -31,6 +33,9 @@ export class SprintDashboardComponent implements OnInit {
             console.log(result);
             if (result) {
                 this.sprintBoardService.addItem(result);
+                this.snackBar.open("added", "close", {
+                    duration: 2000,
+                  });
             }
         });
     }
