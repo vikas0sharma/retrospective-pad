@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
-  selector: 'app-sprint-item',
-  templateUrl: './sprint-item.component.html',
-  styleUrls: ['./sprint-item.component.scss']
+    selector: 'app-sprint-item',
+    templateUrl: './sprint-item.component.html',
+    styleUrls: ['./sprint-item.component.scss']
 })
 export class SprintItemComponent implements OnInit {
 
+    //isEditing= false;
     movies = [
         'Episode I - The Phantom Menace',
         'Episode II - Attack of the Clones',
@@ -17,14 +18,15 @@ export class SprintItemComponent implements OnInit {
         'Episode VI - Return of the Jedi',
         'Episode VII - The Force Awakens',
         'Episode VIII - The Last Jedi'
-      ];
-    
-      drop(event: CdkDragDrop<string[]>) {
-        moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
-      }
-  constructor() { }
+    ];
 
-  ngOnInit() {
-  }
+    drop(event: CdkDragDrop<string[]>) {
+        moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+    }
+
+    constructor() { }
+
+    ngOnInit() {
+    }
 
 }

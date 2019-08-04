@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { SprintBoardRoutingModule } from './sprint-board-routing.module';
 import { SprintDashboardComponent } from './sprint-dashboard/sprint-dashboard.component';

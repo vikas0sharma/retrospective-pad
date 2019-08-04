@@ -2,6 +2,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -49,6 +50,7 @@ import {MatTreeModule} from '@angular/material/tree';
   exports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
     A11yModule,
     CdkStepperModule,
     CdkTableModule,
