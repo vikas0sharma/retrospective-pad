@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { SprintItem } from 'src/app/models/sprint-item';
 
 @Component({
     selector: 'app-sprint-item',
@@ -8,20 +9,10 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class SprintItemComponent implements OnInit {
 
-    //isEditing= false;
-    movies = [
-        'Episode I - The Phantom Menace',
-        'Episode II - Attack of the Clones',
-        'Episode III - Revenge of the Sith',
-        'Episode IV - A New Hope',
-        'Episode V - The Empire Strikes Back',
-        'Episode VI - Return of the Jedi',
-        'Episode VII - The Force Awakens',
-        'Episode VIII - The Last Jedi'
-    ];
+    @Input() sprintItems: SprintItem[];
 
     drop(event: CdkDragDrop<string[]>) {
-        moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+        moveItemInArray(this.sprintItems, event.previousIndex, event.currentIndex);
     }
 
     constructor() { }

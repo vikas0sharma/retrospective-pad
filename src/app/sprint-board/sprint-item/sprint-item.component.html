@@ -1,7 +1,8 @@
-<div cdkDropList class="item-list" (cdkDropListDropped)="drop($event)">
-    <div class="item-box" *ngFor="let movie of movies; let isEditing =false" cdkDrag>
-        <mat-label *ngIf="!isEditing">{{movie}}</mat-label>
-        <textarea class="form-control" *ngIf="isEditing"  rows="3" [(ngModel)]="movie"></textarea>
+
+<div *ngIf="sprintItems.length > 0" cdkDropList class="item-list" (cdkDropListDropped)="drop($event)">
+    <div class="item-box" *ngFor="let item of sprintItems; let isEditing =false" cdkDrag>
+        <mat-label *ngIf="!isEditing">{{item.itemText}}</mat-label>
+        <textarea class="form-control" *ngIf="isEditing"  rows="3" [(ngModel)]="item.itemText"></textarea>
         <!-- <input matInput *ngIf="isEditing" placeholder="Story" [(ngModel)]="movie"> -->
         <i style="cursor: pointer;" class="material-icons" *ngIf="!isEditing" (click)="isEditing=true">edit</i>
         <i style="cursor: pointer;" class="material-icons" *ngIf="isEditing" (click)="isEditing=false">done</i>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SprintItem } from 'src/app/models/sprint-item';
+import { SprintBoardService } from 'src/app/services/sprint-board/sprint-board.service';
 
 @Component({
     selector: 'app-sprint-dashboard',
@@ -8,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class SprintDashboardComponent implements OnInit {
 
     isShown: boolean = false;
-    constructor() { }
+    goodThings: SprintItem[] = [];
+
+    constructor(private sprintBoardService: SprintBoardService) { }
 
     ngOnInit() {
+        this.goodThings = this.sprintBoardService.sprintItems;
     }
 
 }
