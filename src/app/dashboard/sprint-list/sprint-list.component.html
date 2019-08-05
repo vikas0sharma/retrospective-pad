@@ -14,7 +14,7 @@
         <!-- <img mat-card-image [src]="sprint.img" alt="Photo of a Shiba Inu"> -->
         <mat-card-content>
             <mat-nav-list>
-                <a mat-list-item routerLink="/board"> Restrospective board <i class="material-icons">
+                <a mat-list-item [routerLink]="['/board',sprint.id]"> Restrospective board <i class="material-icons">
                         assignment
                     </i></a>
                 <a mat-list-item href="...">Action Items <i class="material-icons">

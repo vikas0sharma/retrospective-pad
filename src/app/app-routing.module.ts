@@ -9,7 +9,7 @@ const routes: Routes = [
             .then(mod => mod.DashboardModule)
     },
     {
-        path: 'board',
+        path: 'board/:id',
         loadChildren: () => import('./sprint-board/sprint-board.module')
             .then(mod => mod.SprintBoardModule)
     }
