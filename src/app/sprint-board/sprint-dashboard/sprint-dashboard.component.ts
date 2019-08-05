@@ -31,7 +31,7 @@ export class SprintDashboardComponent implements OnInit {
         dialogRef.afterClosed().subscribe((result: SprintItem) => {
             console.log('The dialog was closed');
             console.log(result);
-            if (result) {
+            if (result && result.itemText) {
                 this.sprintBoardService.addItem(result);
                 this.snackBar.open("added", "close", {
                     duration: 2000,
