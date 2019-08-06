@@ -5,7 +5,7 @@
                 sentiment_very_satisfied
             </i> Went Well
         </mat-card>
-        <app-sprint-item [sprintItems]="goodThings" ></app-sprint-item>
+        <app-sprint-item [sprintItems]="itemsWentWell" ></app-sprint-item>
     </div>
     <div fxFlex="33%">
         <mat-card class="alert-danger">
@@ -13,6 +13,7 @@
                 sentiment_very_dissatisfied
             </i> Didn't go well
         </mat-card>
+        <app-sprint-item [sprintItems]="itemsWentWrong" ></app-sprint-item>
     </div>
     <div fxFlex>
         <mat-card class="alert-primary">
@@ -32,7 +33,7 @@
         <button (click)="addThingsWentWell()" mat-mini-fab class="fab-secondary alert-success" color="secondary">
             <i class="material-icons alert">sentiment_very_satisfied</i>
         </button>
-        <button mat-mini-fab class="fab-secondary alert-danger" color="secondary">
+        <button (click)="addThingsWentWrong()" mat-mini-fab class="fab-secondary alert-danger" color="secondary">
             <i class="material-icons">sentiment_very_dissatisfied</i>
         </button>
         <button mat-mini-fab class="fab-secondary alert-primary" color="secondary">

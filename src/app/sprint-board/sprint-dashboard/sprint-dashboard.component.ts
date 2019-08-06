@@ -13,14 +13,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SprintDashboardComponent implements OnInit {
 
     isShown: boolean = false;
-    goodThings: SprintItem[] = [];
+    itemsWentWell: SprintItem[] = [];
+    itemsWentWrong: SprintItem[] = [];
 
     constructor(private sprintBoardService: SprintBoardService,
         private dialog: MatDialog,
         private snackBar: MatSnackBar) { }
 
     ngOnInit() {
-        this.goodThings = this.sprintBoardService.sprintItems;
+        this.itemsWentWell = this.sprintBoardService.sprintItemsWentWell;
+        this.itemsWentWrong = this.sprintBoardService.sprintItemsWentWrong;
     }
 
     addThingsWentWell() {
@@ -29,13 +31,29 @@ export class SprintDashboardComponent implements OnInit {
             data: new SprintItem()
         });
         dialogRef.afterClosed().subscribe((result: SprintItem) => {
-            console.log('The dialog was closed');
             console.log(result);
             if (result && result.itemText) {
-                this.sprintBoardService.addItem(result);
+                this.sprintBoardService.addItemWentWell(result);
                 this.snackBar.open("added", "close", {
                     duration: 2000,
-                  });
+                });
+            }
+        });
+    }
+
+    addThingsWentWrong() {
+        const dialogRef = this.dialog.open(SprintModal, {
+            width: '250px',
+            data: new SprintItem()
+        });
+
+        dialogRef.afterClosed().subscribe((result: SprintItem) => {
+            console.log(result);
+            if (result && result.itemText) {
+                this.sprintBoardService.addItemWentWrong(result);
+                this.snackBar.open("added", "close", {
+                    duration: 2000,
+                });
             }
         });
     }
