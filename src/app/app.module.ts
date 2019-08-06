@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SprintBoardService } from './services/sprint-board/sprint-board.service';
+import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
+import { NavSideBarComponent } from './nav/nav-side-bar/nav-side-bar.component';
+import { NavbarService } from './services/helper/navbar.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    NavSideBarComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +22,7 @@ import { SprintBoardService } from './services/sprint-board/sprint-board.service
     AppRoutingModule,
     AppMaterialModule
   ],
-  providers: [SprintBoardService],
+  providers: [SprintBoardService, NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

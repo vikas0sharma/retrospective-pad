@@ -1,0 +1,32 @@
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav mode="over">
+
+        <mat-toolbar color="primary">
+                <mat-toolbar-row>
+                    <i class="material-icons">assignment</i>
+                     Retrospective Pad
+                </mat-toolbar-row>
+            </mat-toolbar>
+
+        <mat-nav-list>
+
+            <h2 matSubheader> test 1</h2>
+
+            <a mat-list-item (click)="sidenav.close()" routerLinkActive="list-item-active">
+                <mat-icon matListIcon> help </mat-icon>
+                help
+            </a>
+
+            <mat-divider></mat-divider>
+
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content role="main">
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
