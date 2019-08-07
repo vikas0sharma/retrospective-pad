@@ -6,10 +6,11 @@ import { AppMaterialModule } from '../app-material/app-material.module';
 import { SprintItemComponent } from './sprint-item/sprint-item.component';
 import { SprintModal } from './sprint-modal/sprint-modal.component';
 import { SharedModule } from '../shared/shared.module';
+import { BoardComponent } from './board/board.component';
 
 
 @NgModule({
-    declarations: [SprintDashboardComponent, SprintItemComponent, SprintModal],
+    declarations: [SprintDashboardComponent, SprintItemComponent, SprintModal, BoardComponent],
     imports: [
         AppMaterialModule,
         SprintBoardRoutingModule,

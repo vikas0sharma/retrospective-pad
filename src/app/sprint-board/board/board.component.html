@@ -1,0 +1,27 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+    <div fxFlexAlign="center" fxLayout="column" fxFlex="60">
+        <mat-card matRipple [matRippleColor]="red" style="height: 20px; background: #f2f2f2">
+            <mat-card-header>
+
+                <mat-card-title>Create Board</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+        <mat-card>
+            <div fxFlexAlign="center" fxLayout="column">
+                <mat-form-field>
+                    <input matInput placeholder="Input">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <textarea matInput placeholder="Textarea"></textarea>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-select placeholder="Select">
+                        <mat-option value="option">Option</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card>
+    </div>
+</div>
