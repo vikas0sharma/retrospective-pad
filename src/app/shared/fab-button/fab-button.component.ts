@@ -43,6 +43,7 @@ export class FabButtonComponent {
 }
 
 export interface FabButton {
+    id:number,
     icon: string,
     tooltip: string,
     class: string

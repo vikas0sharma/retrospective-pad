@@ -4,6 +4,8 @@ import { SprintBoardService } from 'src/app/services/sprint-board/sprint-board.s
 import { MatDialog } from '@angular/material/dialog';
 import { SprintModal } from '../sprint-modal/sprint-modal.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FabButton } from 'src/app/shared/fab-button/fab-button.component';
+import { SprintItemType } from 'src/app/models/enums';
 
 @Component({
     selector: 'app-sprint-dashboard',
@@ -25,7 +27,19 @@ export class SprintDashboardComponent implements OnInit {
         this.itemsWentWrong = this.sprintBoardService.sprintItemsWentWrong;
     }
 
-    addThingsWentWell() {
+    onAddClick(fb: FabButton) {
+        if (fb.id == SprintItemType.WentWell) {
+            this.addThingsWentWell();
+        }
+        else if (fb.id == SprintItemType.WentWrong) {
+            this.addThingsWentWrong();
+        }
+        else {
+
+        }
+    }
+
+    private addThingsWentWell(): void {
         const dialogRef = this.dialog.open(SprintModal, {
             width: '250px',
             data: new SprintItem()
@@ -41,7 +55,7 @@ export class SprintDashboardComponent implements OnInit {
         });
     }
 
-    addThingsWentWrong() {
+    private addThingsWentWrong(): void {
         const dialogRef = this.dialog.open(SprintModal, {
             width: '250px',
             data: new SprintItem()
@@ -59,26 +73,22 @@ export class SprintDashboardComponent implements OnInit {
     }
     speedDialFabButtons = [
         {
-          icon: 'timeline',
-          tooltip: 'Do some timeline here'
+            id: SprintItemType.WentWell,
+            icon: 'sentiment_very_satisfied',
+            tooltip: 'Do some timeline here',
+            class: 'alert-primary'
         },
         {
-          icon: 'view_headline',
-          tooltip: 'Do some headline here'
+            id: SprintItemType.WentWrong,
+            icon: 'sentiment_very_dissatisfied',
+            tooltip: 'Do some headline here'
         },
         {
-          icon: 'room',
-          tooltip: 'get some room here'
-        },
-        {
-          icon: 'lightbulb_outline',
-          tooltip: 'Do some outline here'
-        },
-        {
-          icon: 'lock',
-          tooltip: 'Do lock down'
+            id: SprintItemType.ActionItem,
+            icon: 'list',
+            tooltip: 'get some room here'
         }
-      ];
+    ];
 
 
 }
