@@ -21,7 +21,7 @@ import { NavbarService } from './services/helper/navbar.service';
     BrowserAnimationsModule,
     AppRoutingModule,
     AppMaterialModule
-  ],
+],
   providers: [SprintBoardService, NavbarService],
   bootstrap: [AppComponent]
 })

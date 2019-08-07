@@ -57,6 +57,28 @@ export class SprintDashboardComponent implements OnInit {
             }
         });
     }
+    speedDialFabButtons = [
+        {
+          icon: 'timeline',
+          tooltip: 'Do some timeline here'
+        },
+        {
+          icon: 'view_headline',
+          tooltip: 'Do some headline here'
+        },
+        {
+          icon: 'room',
+          tooltip: 'get some room here'
+        },
+        {
+          icon: 'lightbulb_outline',
+          tooltip: 'Do some outline here'
+        },
+        {
+          icon: 'lock',
+          tooltip: 'Do lock down'
+        }
+      ];
 
 
 }

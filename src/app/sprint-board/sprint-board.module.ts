@@ -5,13 +5,15 @@ import { SprintDashboardComponent } from './sprint-dashboard/sprint-dashboard.co
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { SprintItemComponent } from './sprint-item/sprint-item.component';
 import { SprintModal } from './sprint-modal/sprint-modal.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
     declarations: [SprintDashboardComponent, SprintItemComponent, SprintModal],
     imports: [
         AppMaterialModule,
-        SprintBoardRoutingModule
+        SprintBoardRoutingModule,
+        SharedModule
     ],
     entryComponents: [SprintModal]
 })
