@@ -31,12 +31,20 @@ export class SprintBoardService {
             itemText: 'that was so hell of a sprint',
             itemType: SprintItemType.WentWell
         }
+        ,
+        {
+            id: 3,
+            createdBy: 1,
+            createdOn: new Date(),
+            itemText: 'that was so hell of a sprint',
+            itemType: SprintItemType.WentWell
+        }
     ];
 
     addItemWentWell(sprintItem: SprintItem): void {
         this.sprintItemsWentWell.push(sprintItem);
     }
-    
+
     addItemWentWrong(sprintItem: SprintItem):void{
         this.sprintItemsWentWrong.push(sprintItem);
     }
