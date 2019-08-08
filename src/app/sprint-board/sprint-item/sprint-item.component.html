@@ -1,42 +1,55 @@
-
 <div *ngIf="sprintItems && sprintItems.length > 0" cdkDropList class="item-list" (cdkDropListDropped)="drop($event)">
-    <div  *ngFor="let item of sprintItems; let isEditing =false" cdkDrag>
+    <div *ngFor="let item of sprintItems; let isEditing =false" cdkDrag>
         <!-- <mat-label *ngIf="!isEditing">{{item.itemText}}</mat-label>
         <textarea class="form-control" *ngIf="isEditing"  rows="3" [(ngModel)]="item.itemText"></textarea>
         <i style="cursor: pointer;" class="material-icons" *ngIf="!isEditing" (click)="isEditing=true">edit</i>
         <i style="cursor: pointer;" class="material-icons" *ngIf="isEditing" (click)="isEditing=false">done</i> -->
         <div class="wrapper">
-    		
-                <div class="card radius shadowDepth1" >
-                    <div class="card__image border-tlr-radius" matRipple matRippleColor="#d4edda">
-                       
+
+            <div class="card radius shadowDepth1">
+                <div class="card__image border-tlr-radius" matRipple matRippleColor="#d4edda">
+
+                </div>
+
+                <div class="card__content card__padding">
+                    <div class="card__share">
+                        <i class="material-icons share-toggle share-icon" matRipple *ngIf="!isEditing"
+                            (click)="isEditing=true">edit</i>
+                        <i class="material-icons share-toggle share-icon" matRipple *ngIf="isEditing"
+                            (click)="isEditing=false">save</i>
                     </div>
-    
-                    <div class="card__content card__padding">
-                        <div class="card__share">
-                            <!-- <a id="share" class="share-toggle share-icon" href="#"></a> -->
-                            <i class="material-icons share-toggle share-icon" matRipple>edit</i>
-                        </div>
-    
-                        
-    
-                        <article class="card__article">
+
+
+                    <article class="card__article">
+
+                        <div *ngIf="!isEditing">
                             <h2><a href="#">{{item.itemTitle}}</a></h2>
-    
-                            <p>{{item.itemText}}</p>
-                        </article>
+                        </div>
+                        <mat-form-field class="field-width" *ngIf="isEditing">
+                            <input matInput placeholder="Title" [(ngModel)]="item.itemTitle">
+                        </mat-form-field>
+
+                        <p *ngIf="!isEditing">{{item.itemText}}</p>
+
+                        <mat-form-field class="field-width" *ngIf="isEditing">
+                            <textarea matInput placeholder="Description" [(ngModel)]="item.itemText"></textarea>
+                        </mat-form-field>
+
+                    </article>
+
+                </div>
+
+                <div class="card__action">
+                    <div class="card__meta">
+                        <time>{{item.createdOn | date:'medium'}}</time>
                     </div>
-    
-                    <div class="card__action">
-                            <div class="card__meta">
-                                    <time>{{item.createdOn | date:'medium'}}</time>
-                                </div>
-                        <div class="card__author">
-                            <div class="card__author-content">
-                                By <a href="#">{{item.createdBy}}</a>
-                            </div>
+                    <div class="card__author">
+                        <div class="card__author-content">
+                            By <a href="#">{{item.createdBy}}</a>
                         </div>
                     </div>
                 </div>
+
+            </div>
+        </div>
     </div>
-</div>
