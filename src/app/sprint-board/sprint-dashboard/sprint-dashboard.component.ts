@@ -45,8 +45,9 @@ export class SprintDashboardComponent implements OnInit {
             data: new SprintItem()
         });
         dialogRef.afterClosed().subscribe((result: SprintItem) => {
-            console.log(result);
             if (result && result.itemText) {
+                result.itemType = SprintItemType.WentWell;
+                result.createdOn = new Date();
                 this.sprintBoardService.addItemWentWell(result);
                 this.snackBar.open("added", "close", {
                     duration: 2000,
@@ -62,8 +63,9 @@ export class SprintDashboardComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe((result: SprintItem) => {
-            console.log(result);
             if (result && result.itemText) {
+                result.itemType = SprintItemType.WentWrong;
+                result.createdOn = new Date();
                 this.sprintBoardService.addItemWentWrong(result);
                 this.snackBar.open("added", "close", {
                     duration: 2000,
