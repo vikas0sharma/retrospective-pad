@@ -1,5 +1,5 @@
 <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
-    <div fxFlexAlign="center" fxLayout="column" fxFlex="60">
+    <div fxFlexAlign="center" fxLayout="column" fxFlex="40">
         <mat-card matRipple [matRippleColor]="red" style="height: 20px; background: #f2f2f2">
             <mat-card-header>
 
@@ -9,19 +9,17 @@
         <mat-card>
             <div fxFlexAlign="center" fxLayout="column">
                 <mat-form-field>
-                    <input matInput placeholder="Input">
+                        <mat-label><mat-icon>label</mat-icon> <i> Board Name</i> </mat-label>
+                    <input matInput placeholder="Name" required>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <textarea matInput placeholder="Textarea"></textarea>
+                        <mat-label><mat-icon>description</mat-icon> <i> Description</i></mat-label>
+                    <textarea matInput placeholder=""></textarea>
                 </mat-form-field>
-
-                <mat-form-field>
-                    <mat-select placeholder="Select">
-                        <mat-option value="option">Option</mat-option>
-                    </mat-select>
-                </mat-form-field>
+                
             </div>
+            <button mat-mini-fab class="corner-btn "><mat-icon>add</mat-icon></button>
         </mat-card>
     </div>
 </div>
