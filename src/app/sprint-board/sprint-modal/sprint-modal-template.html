@@ -1,11 +1,15 @@
 <h1 mat-dialog-title>Hey {{data.id}}</h1>
 <div mat-dialog-content>
-  <p>Please add your story below:</p>
-  <mat-form-field>
-    <textarea matInput placeholder="Write here" [(ngModel)]="data.itemText"></textarea>
-  </mat-form-field>
+    <p>Please add your story below:</p>
+    <mat-form-field>
+        <input matInput placeholder="Title" [(ngModel)]="data.itemTitle">
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Write here" [(ngModel)]="data.itemText"></textarea>
+    </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial color="accent">Ok</button>
 </div>

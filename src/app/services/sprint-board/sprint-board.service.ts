@@ -7,7 +7,9 @@ import { SprintItemType } from 'src/app/models/enums';
 })
 export class SprintBoardService {
 
-    sprintItemsWentWrong:SprintItem[]=[];
+    sprintItemsActionItem: SprintItem[] = [];
+
+    sprintItemsWentWrong: SprintItem[] = [];
 
     sprintItemsWentWell: SprintItem[] = [
         {
@@ -29,7 +31,7 @@ export class SprintBoardService {
         {
             id: 3,
             createdBy: 1,
-            createdOn: new Date(),        
+            createdOn: new Date(),
             itemTitle: 'title 1',
             itemText: 'that was so hell of a sprint',
             itemType: SprintItemType.WentWell
@@ -49,8 +51,12 @@ export class SprintBoardService {
         this.sprintItemsWentWell.push(sprintItem);
     }
 
-    addItemWentWrong(sprintItem: SprintItem):void{
+    addItemWentWrong(sprintItem: SprintItem): void {
         this.sprintItemsWentWrong.push(sprintItem);
+    }
+
+    addItemActionItem(sprintItem: SprintItem): void {
+        this.sprintItemsActionItem.push(sprintItem);
     }
 
     constructor() { }

@@ -24,7 +24,7 @@ export class SprintItemComponent implements OnInit {
             case SprintItemType.WentWrong:
                 return "#f8d7da";
             case SprintItemType.ActionItem:
-                return "#004085";
+                return "#cce5ff";
             default:
                 return "";
         }

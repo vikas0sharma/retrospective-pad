@@ -1,9 +1,6 @@
 <div *ngIf="sprintItems && sprintItems.length > 0" cdkDropList class="item-list" (cdkDropListDropped)="drop($event)">
     <div *ngFor="let item of sprintItems; let isEditing =false" cdkDrag>
-        <!-- <mat-label *ngIf="!isEditing">{{item.itemText}}</mat-label>
-        <textarea class="form-control" *ngIf="isEditing"  rows="3" [(ngModel)]="item.itemText"></textarea>
-        <i style="cursor: pointer;" class="material-icons" *ngIf="!isEditing" (click)="isEditing=true">edit</i>
-        <i style="cursor: pointer;" class="material-icons" *ngIf="isEditing" (click)="isEditing=false">done</i> -->
+        
         <div class="wrapper">
 
             <div class="card radius shadowDepth1">
@@ -13,10 +10,8 @@
 
                 <div class="card__content card__padding">
                     <div class="card__share">
-                        <i class="material-icons share-toggle share-icon" matRipple *ngIf="!isEditing"
-                            (click)="isEditing=true">edit</i>
-                        <i class="material-icons share-toggle share-icon" matRipple *ngIf="isEditing"
-                            (click)="isEditing=false">save</i>
+                        <i class="material-icons share-toggle share-icon" matRipple
+                            (click)="isEditing=!isEditing">{{isEditing ? 'save': 'edit'}}</i>
                     </div>
 
 

@@ -17,14 +17,17 @@ export class SprintDashboardComponent implements OnInit {
     isShown: boolean = false;
     itemsWentWell: SprintItem[] = [];
     itemsWentWrong: SprintItem[] = [];
+    itemsActionItem: SprintItem[] = [];
 
-    constructor(private sprintBoardService: SprintBoardService,
+    constructor(
+        private sprintBoardService: SprintBoardService,
         private dialog: MatDialog,
         private snackBar: MatSnackBar) { }
 
     ngOnInit() {
         this.itemsWentWell = this.sprintBoardService.sprintItemsWentWell;
         this.itemsWentWrong = this.sprintBoardService.sprintItemsWentWrong;
+        this.itemsActionItem = this.sprintBoardService.sprintItemsActionItem;
     }
 
     onAddClick(fb: FabButton) {
@@ -35,7 +38,7 @@ export class SprintDashboardComponent implements OnInit {
             this.addThingsWentWrong();
         }
         else {
-
+            this.addActionItem();
         }
     }
 
@@ -73,6 +76,26 @@ export class SprintDashboardComponent implements OnInit {
             }
         });
     }
+
+    private addActionItem(): void {
+        const dialogRef = this.dialog.open(SprintModal, {
+            width: '250px',
+            data: new SprintItem()
+        });
+
+        dialogRef.afterClosed().subscribe((result: SprintItem) => {
+            if (result && result.itemText) {
+                result.itemType = SprintItemType.ActionItem;
+                result.createdOn = new Date();
+                this.sprintBoardService.addItemActionItem(result);
+                this.snackBar.open("added", "close", {
+                    duration: 2000,
+                });
+            }
+        });
+    }
+
+
     speedDialFabButtons = [
         {
             id: SprintItemType.WentWell,
