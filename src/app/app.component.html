@@ -1,5 +1,6 @@
 <app-nav-side-bar>
-    <app-nav-bar (toggleSideNav)="toggleNavSidebar()"></app-nav-bar>
+    
+    <app-nav-bar *ngIf="user" (toggleSideNav)="toggleNavSidebar()"></app-nav-bar>
     <div class="wrapper">
         <router-outlet></router-outlet>
     </div>

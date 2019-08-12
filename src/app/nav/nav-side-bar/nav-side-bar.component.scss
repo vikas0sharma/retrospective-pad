@@ -20,3 +20,20 @@
   .app-nav-list-icon {
     margin: 0 12px 0 12px;
   }
+
+  $avatar-size:50px;
+  .circle {
+    margin-left: 5px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    height: $avatar-size;
+    text-align: center;
+    width: $avatar-size;
+  }
+  
+  .initials {
+    font-size: calc(50px / 2); /* 50% of parent */
+    line-height: 1;
+    position: relative;
+    top: calc(50px / 4); /* 25% of parent */
+  }

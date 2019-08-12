@@ -1,9 +1,11 @@
-<mat-toolbar color="primary" class="fixed-header mat-elevation-z app-navbar" >
+<mat-toolbar color="primary" class="fixed-header mat-elevation-z app-navbar">
     <mat-toolbar-row>
         <button mat-icon-button (click)="toggleSideNav.emit()">
             <mat-icon>menu</mat-icon>
         </button>
         <i class="material-icons">assignment</i>
         <span routerLink="" class="home-btn">Retrospective Pad</span>
+        <span class="example-spacer"></span>
+        <mat-icon (click)="logout()" class="home-btn" aria-hidden="false" aria-label="Example delete icon">power_settings_new</mat-icon>
     </mat-toolbar-row>
 </mat-toolbar>

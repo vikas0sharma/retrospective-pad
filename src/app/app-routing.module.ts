@@ -17,6 +17,11 @@ const routes: Routes = [
         path: 'login',
         loadChildren: () => import('./auth/auth.module')
             .then(mod => mod.AuthModule)
+    },
+    // otherwise redirect to home
+    {
+        path: '**',
+        redirectTo: ''
     }
 ];
 
