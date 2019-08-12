@@ -12,9 +12,9 @@
         <mat-nav-list>
 
             <div mat-list-item class="circle">
-                <span class="initials">V</span>
+                <span class="initials" [innerText]="getInitials()" ></span>
             </div>
-            <p matSubheader>vikas@gmail.com</p>
+            <p *ngIf="user" matSubheader>{{user.email}}</p>
 
             <mat-divider></mat-divider>
 

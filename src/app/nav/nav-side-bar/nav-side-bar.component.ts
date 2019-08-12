@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { NavbarService } from 'src/app/services/helper/navbar.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/models/auth/user.model';
 
 @Component({
     selector: 'app-nav-side-bar',
@@ -10,11 +12,24 @@ import { NavbarService } from 'src/app/services/helper/navbar.service';
 export class NavSideBarComponent implements OnInit {
 
     @ViewChild('sidenav', { static: true }) private sidenav: MatSidenav;
-    
-    constructor(private navbarService: NavbarService) { }
+
+    private user: User;
+
+    constructor(
+        private navbarService: NavbarService,
+        private authenticationService: AuthService) { }
 
     ngOnInit() {
         this.navbarService.setSidenav(this.sidenav);
+        this.authenticationService.currentUser.subscribe(u => this.user = u);
+    }
+
+    getInitials(): string {
+        if (this.user && this.user.email) {
+
+            return this.user.email[0].toUpperCase();
+        }
+        return '';
     }
 
 }
