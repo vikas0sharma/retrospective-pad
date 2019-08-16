@@ -21,6 +21,11 @@ const routes: Routes = [
         loadChildren: () => import('./auth/auth.module')
             .then(mod => mod.AuthModule)
     },
+    {
+        path: 'action-items',
+        loadChildren: () => import('./action-item/action-item.module')
+            .then(mod => mod.ActionItemModule)
+    },
     // otherwise redirect to home
     {
         path: '**',
