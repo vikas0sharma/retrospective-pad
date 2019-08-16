@@ -12,6 +12,8 @@ import { NavbarService } from './services/helper/navbar.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { AuthGuard } from './guards/auth.guard';
     BrowserAnimationsModule,
     AppRoutingModule,
     AppMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 ],
   providers: [SprintBoardService, NavbarService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
