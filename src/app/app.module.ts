@@ -9,8 +9,9 @@ import { SprintBoardService } from './services/sprint-board/sprint-board.service
 import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { NavSideBarComponent } from './nav/nav-side-bar/nav-side-bar.component';
 import { NavbarService } from './services/helper/navbar.service';
-import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppMaterialModule,
     HttpClientModule
 ],
-  providers: [SprintBoardService, NavbarService, AuthService],
+  providers: [SprintBoardService, NavbarService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

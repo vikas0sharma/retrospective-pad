@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavbarService } from './services/helper/navbar.service';
-import { AuthService } from './services/auth.service';
+
 import { User } from './models/auth/user.model';
 import { Router } from '@angular/router';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
     selector: 'app-root',

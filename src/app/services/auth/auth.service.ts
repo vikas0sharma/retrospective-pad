@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { config } from 'process';
-import { User } from '../models/auth/user.model';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { User } from 'src/app/models/auth/user.model';
 
 @Injectable({
     providedIn: 'root'

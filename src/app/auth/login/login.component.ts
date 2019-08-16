@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
     selector: 'app-login',
@@ -10,12 +11,14 @@ import { Router } from '@angular/router';
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+    private returnUrl: string;
     constructor(
+        private route: ActivatedRoute,
         private router: Router,
         private authService: AuthService) { }
 
     ngOnInit() {
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
     onLogin(loginForm: NgForm): void {
@@ -25,7 +28,7 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate(['/']);
+                    this.router.navigate([this.returnUrl]);
                 });
     }
 
