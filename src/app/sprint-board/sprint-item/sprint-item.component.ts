@@ -16,19 +16,7 @@ export class SprintItemComponent implements OnInit {
         moveItemInArray(this.sprintItems, event.previousIndex, event.currentIndex);
     }
 
-    getColor(sprintItem: SprintItem): string {
-
-        switch (sprintItem.itemType) {
-            case SprintItemType.WentWell:
-                return "#d4edda";
-            case SprintItemType.WentWrong:
-                return "#f8d7da";
-            case SprintItemType.ActionItem:
-                return "#cce5ff";
-            default:
-                return "";
-        }
-    }
+    
     constructor() { }
 
     ngOnInit() {
