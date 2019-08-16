@@ -13,7 +13,7 @@ export class NavSideBarComponent implements OnInit {
 
     @ViewChild('sidenav', { static: true }) private sidenav: MatSidenav;
 
-    private user: User;
+    user: User;
 
     constructor(
         private navbarService: NavbarService,
