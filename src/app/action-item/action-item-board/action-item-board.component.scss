@@ -22,18 +22,3 @@
     margin-top:-12px;
 }
 
-.expansion-panel-header { transition: all .2s ease-in-out; margin-bottom: 5px; }
-.expansion-panel-header:hover { 
-    transform: scale(1.05); 
-}
-.mat-card .mat-divider-horizontal {
-    position: relative !important;
-    left: 0;
-    width: 100%;
-}
-
-.chk-status{
-    display: block;
-    margin-left: 50%;
-    margin-top: 11px;
-}
