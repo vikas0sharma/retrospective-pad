@@ -32,6 +32,13 @@
         </div>
 
         <div class="card__action">
+
+                <div class="content-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <!-- <i class="material-icons">list</i> -->
+                    <a routerLink="/action-items">Action Items</a>
+                </div>
+
             <div class="card__meta">
                 <time>{{sprintCard.createdOn | date:'medium'}}</time>
             </div>
@@ -40,6 +47,7 @@
                     By <a href="#">{{sprintCard.createdBy}}</a>
                 </div>
             </div>
+
         </div>
 
     </div>
